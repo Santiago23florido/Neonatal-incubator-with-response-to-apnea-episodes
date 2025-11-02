@@ -1,0 +1,17 @@
+// UDP Communication Network
+digraph {
+	node [fillcolor=lightblue shape=box style=filled]
+	ESP32 [label="ESP32 Node"]
+	Sensor [label="Biosignal Sensor"]
+	Control [label="Frequency Control Mechanism"]
+	Sensor -> ESP32
+	Control -> ESP32
+	PC [label="PC - Central Node" fillcolor=lightgreen]
+	UI [label="User Interface"]
+	Apnea [label="Apnea Detection Logic"]
+	UI -> PC
+	Apnea -> PC
+	edge [color=black]
+	ESP32 -> PC [label="UDP Data"]
+	PC -> ESP32 [label="UDP Activation Signal"]
+}
